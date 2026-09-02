@@ -1,0 +1,48 @@
+{
+  "capitanes": [
+    {
+      "nombre": "Guerrero",
+      "tipo": "Tanque de Reputación",
+      "atributosFuertes": ["Vida", "Reputación"],
+      "atributosBasePariaLvl1": {
+        "vida": 95,
+        "reputacion": 9,
+        "suerte": 3
+      },
+      "usoRecomendado": "Excelente para Mapas Bono. Su alta Reputación incrementa las recompensas aseguradas y su vida le permite aguantar el mapa completo."
+    },
+    {
+      "nombre": "Tablón",
+      "tipo": "Tanque de Reputación",
+      "atributosFuertes": ["Vida", "Reputación"],
+      "atributosBasePariaLvl1": {
+        "vida": 95,
+        "reputacion": 9,
+        "suerte": 3
+      },
+      "usoRecomendado": "Ideal para Mapas Bono gracias a su balance entre alta Vida y Reputación."
+    },
+    {
+      "nombre": "Océano",
+      "tipo": "Tanque de Suerte",
+      "atributosFuertes": ["Vida", "Suerte"],
+      "atributosBasePariaLvl1": {
+        "vida": 95,
+        "reputacion": 3,
+        "suerte": 9
+      },
+      "usoRecomendado": "Ideal para misiones de alto riesgo donde buscas conseguir botín raro o extra."
+    },
+    {
+      "nombre": "Traviesal",
+      "tipo": "Tanque de Suerte",
+      "atributosFuertes": ["Vida", "Suerte"],
+      "atributosBasePariaLvl1": {
+        "vida": 95,
+        "reputacion": 3,
+        "suerte": 9
+      },
+      "usoRecomendado": "Perfecto para aumentar las probabilidades de recompensas secundarias en misiones exigentes."
+    }
+  ]
+}
