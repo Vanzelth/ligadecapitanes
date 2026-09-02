@@ -3,53 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liga de Capitanes - Guía y Calculadora</title>
+  <title>Liga de Capitanes - Guía de Progresión</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
     <h1>⚓ Liga de Capitanes</h1>
-    <p>Consulta atributos, roles y proyecciones de nivel</p>
+    <p>Tabla de progresión nivel por nivel y filtros detallados</p>
   </header>
 
   <main class="contenedor">
-    <!-- Panel Lateral: Filtros por Rol -->
+    <!-- Panel Lateral: Categorías principales -->
     <aside class="panel-filtros">
       <h2>Categorías</h2>
-      <button class="btn-filtro activo" onclick="filtrarCapitanes('Todos')">Todos los Capitanes</button>
-      <button class="btn-filtro" onclick="filtrarCapitanes('Tanque de Reputación')">Mapas Bono (Vida + Reputación)</button>
-      <button class="btn-filtro" onclick="filtrarCapitanes('Tanque de Suerte')">Botín Raro (Vida + Suerte)</button>
+      <button class="btn-filtro activo" onclick="filtrarCategoria('Todos')">Todos los Capitanes</button>
+      <button class="btn-filtro" onclick="filtrarCategoria('Tanque de Reputación')">Mapas Bono (Vida + Reputación)</button>
+      <button class="btn-filtro" onclick="filtrarCategoria('Tanque de Suerte')">Botín Raro (Vida + Suerte)</button>
+      <button class="btn-filtro" onclick="filtrarCategoria('Especialista Suerte')">Especialista en Suerte</button>
+      <button class="btn-filtro" onclick="filtrarCategoria('Especialista Reputación')">Especialista en Reputación</button>
+      <button class="btn-filtro" onclick="filtrarCategoria('Híbrido')">Híbridos Completos</button>
     </aside>
 
-    <!-- Panel Principal: Tarjetas de Capitanes -->
+    <!-- Panel Principal -->
     <section class="panel-contenido">
-      <!-- Selector de Niveles/Rangos para simular estadísticas -->
+      <!-- Selector de Filtros Avanzados -->
       <div class="control-simulador">
-        <label for="select-rango"><strong>Rango:</strong></label>
-        <select id="select-rango" onchange="actualizarVista()">
-          <option value="Paria">Paria</option>
-          <option value="Inofensivo">Inofensivo</option>
-          <option value="Peligroso">Peligroso</option>
-        </select>
+        <div>
+          <label for="select-rango"><strong>Rango:</strong></label>
+          <select id="select-rango" onchange="actualizarVista()">
+            <option value="Paria">Paria</option>
+            <option value="Inofensivo">Inofensivo</option>
+            <option value="Peligroso">Peligroso</option>
+            <option value="Élite">Élite</option>
+            <option value="Épico">Épico</option>
+          </select>
+        </div>
 
-        <label for="select-nivel"><strong>Nivel:</strong></label>
-        <select id="select-nivel" onchange="actualizarVista()">
-          <option value="1">Nivel 1</option>
-          <option value="2">Nivel 2</option>
-          <option value="3">Nivel 3</option>
-          <option value="4">Nivel 4</option>
-          <option value="5">Nivel 5</option>
-          <option value="6">Nivel 6</option>
-          <option value="7">Nivel 7</option>
-          <option value="8">Nivel 8</option>
-          <option value="9">Nivel 9</option>
-          <option value="10">Nivel 10</option>
-        </select>
+        <div>
+          <label for="select-nivel-destacado"><strong>Nivel a resaltar:</strong></label>
+          <select id="select-nivel-destacado" onchange="actualizarVista()">
+            <option value="1">Nivel 1</option>
+            <option value="2">Nivel 2</option>
+            <option value="3">Nivel 3</option>
+            <option value="4">Nivel 4</option>
+            <option value="5">Nivel 5</option>
+            <option value="6">Nivel 6</option>
+            <option value="7">Nivel 7</option>
+            <option value="8">Nivel 8</option>
+            <option value="9">Nivel 9</option>
+            <option value="10">Nivel 10</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="select-atributo"><strong>Enfoque de Atributo:</strong></label>
+          <select id="select-atributo" onchange="actualizarVista()">
+            <option value="Todos">Todos los atributos</option>
+            <option value="Vida">Alta Vitalidad</option>
+            <option value="Reputación">Alta Reputación</option>
+            <option value="Suerte">Alta Suerte</option>
+          </select>
+        </div>
       </div>
 
-      <div id="lista-capitanes" class="grid-capitanes">
-        <!-- Aquí se cargan los capitanes desde el JSON mediante JS -->
+      <!-- Lista Vertical de Capitanes -->
+      <div id="lista-capitanes" class="lista-vertical-capitanes">
+        <!-- Aquí se generan los capitanes uno encima de otro -->
       </div>
     </section>
   </main>
