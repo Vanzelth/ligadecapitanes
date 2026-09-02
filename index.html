@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liga de Capitanes - Guía y Calculadora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>⚓ Liga de Capitanes</h1>
+    <p>Consulta atributos, roles y proyecciones de nivel</p>
+  </header>
+
+  <main class="contenedor">
+    <!-- Panel Lateral: Filtros por Rol -->
+    <aside class="panel-filtros">
+      <h2>Categorías</h2>
+      <button class="btn-filtro activo" onclick="filtrarCapitanes('Todos')">Todos los Capitanes</button>
+      <button class="btn-filtro" onclick="filtrarCapitanes('Tanque de Reputación')">Mapas Bono (Vida + Reputación)</button>
+      <button class="btn-filtro" onclick="filtrarCapitanes('Tanque de Suerte')">Botín Raro (Vida + Suerte)</button>
+    </aside>
+
+    <!-- Panel Principal: Tarjetas de Capitanes -->
+    <section class="panel-contenido">
+      <!-- Selector de Niveles/Rangos para simular estadísticas -->
+      <div class="control-simulador">
+        <label for="select-rango"><strong>Rango:</strong></label>
+        <select id="select-rango" onchange="actualizarVista()">
+          <option value="Paria">Paria</option>
+          <option value="Inofensivo">Inofensivo</option>
+          <option value="Peligroso">Peligroso</option>
+        </select>
+
+        <label for="select-nivel"><strong>Nivel:</strong></label>
+        <select id="select-nivel" onchange="actualizarVista()">
+          <option value="1">Nivel 1</option>
+          <option value="2">Nivel 2</option>
+          <option value="3">Nivel 3</option>
+          <option value="4">Nivel 4</option>
+          <option value="5">Nivel 5</option>
+          <option value="6">Nivel 6</option>
+          <option value="7">Nivel 7</option>
+          <option value="8">Nivel 8</option>
+          <option value="9">Nivel 9</option>
+          <option value="10">Nivel 10</option>
+        </select>
+      </div>
+
+      <div id="lista-capitanes" class="grid-capitanes">
+        <!-- Aquí se cargan los capitanes desde el JSON mediante JS -->
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
